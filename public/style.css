@@ -1,0 +1,125 @@
+        *{
+            font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+        }
+        body{
+            background: #111b21;
+            margin: 0px;
+            height: 100%;
+        
+        }
+        #chat{
+            max-height: 98vh;
+            position:absolute;
+            top:4px;
+            right:0px;
+            width: 99vw;
+            padding: 0px;
+            bottom: 65px;
+            max-width: 750px;
+            left:0px;
+            margin: auto;
+            border:0px solid black;
+            
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            background: #0a0c0d;
+            overflow: auto; 
+        }
+        .time{
+            font-size: 12px;
+            float:right;
+            margin-top: 7px;
+            margin-left: 8px;
+            color:hsl(197deg 4% 66%);
+        }
+        
+        #content{
+            font-size: 14px;
+            padding:5px 12px;
+        }
+        #chat::-webkit-scrollbar {
+            display: none;
+        }
+        #input{
+            display: flex;
+            position: absolute;
+            bottom: 3px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            
+            width: 100vw;
+            align-content: center;
+            align-items: center;
+        }
+        #input_message{
+            font-size: 16px;
+            border-radius:5px;
+            width: 300px;
+            margin-right: 10px;
+            outline: none;
+            border: none;
+            background: #2a3942;
+            color: white;
+            padding:10px 15px;
+            
+        }
+        .inline{
+            display:inline-block;
+        }
+        .message{
+            color:white;
+            padding:4px 10px 6px 8px;
+            border-radius: 5px;
+            background: #202c33;
+            margin-bottom: 3px;
+            max-width: 65%;
+            word-break: break-word;
+        }
+        
+       .out{
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column-reverse;
+            
+       }
+       .user{
+            background: #005c4b;
+       }
+       .in{
+            display: flex;
+            align-items: flex-end;
+            flex-direction: row;
+            
+       }
+        .name{
+            font-size: 12px;
+            font-weight:600;
+      
+        }
+        #send{
+          color: #8696a0;
+          font-size: 28px;
+         
+        }
+        #send:hover{
+            cursor: pointer;
+            color:white;
+        }
+       
+       #bottom{
+            border-top:3px solid #202020 ;
+            background: #0a0c0d;
+            width: 94vw;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            max-width: 730px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            padding: 10px;
+       }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
+    <script src="socket.io/socket.io.js"></script>
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chat">
+        <div id="content">
+        </div>
+    </div>
+    </div>
+    <div id='input'>
+        <div id='bottom'>
+            <input type="text" onkeydown="if(event.key=='Enter'){ enter() }" id="input_message" placeholder="Mensagem">
+            <ion-icon name="send" id='send'></ion-icon>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
