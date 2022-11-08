@@ -35,7 +35,7 @@
         const row = null
         const user_color = null
          sendMessage(message.value, userId, user_color, row, time)
-         socket.emit('message', message.value, userId)
+         socket.emit('message', message.value, userId, time)
          message.value = "";
      }
      e.preventDefault()
@@ -47,7 +47,7 @@
         const row = null
         const user_color = null
          sendMessage(message.value, userId, user_color, row, time)
-         socket.emit('message', message.value, userId)
+         socket.emit('message', message.value, userId, time)
          message.value = "";
      }
      e.preventDefault()
@@ -59,7 +59,7 @@
         const row = null
         const user_color = null
          sendMessage(message.value, userId, user_color, row, time)
-         socket.emit('message', message.value, userId)
+         socket.emit('message', message.value, userId, time)
          message.value = "";
      }
  }
@@ -74,29 +74,21 @@
             append_message.innerHTML = `<span class='message'>
             <a class='name' style='color:${color};'>${user}</a><br>
             <a>${message}</a>
-           
                 <a class='time'>${time}</a>
-       
             </span>`
         }else{
             append_message.innerHTML = `<span class='message'>
             <a>${message}</a>
-            
                 <a class='time'>${time}</a>
-           
-           
         </span>`
         }
     }else{
         append_message.classList = 'out'
         append_message.innerHTML = `<span class='message user'>
         <a>${message}</a>
-       
                 <a class='time'>${time}</a>
-         
         </span>`
     }
- 
     content.append(append_message)
     append_message.scrollIntoView();
  }

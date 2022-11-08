@@ -5,7 +5,6 @@ const server = app.listen(port);
 app.use(express.static('public'));
 const socket = require('socket.io');
 const io = socket(server);
-const currentdate = new Date();
 const chat = {
     messages:[],
     color:{}
@@ -20,21 +19,20 @@ io.sockets.on('connection', (socket)=>{
     console.log(chat.color)
     socket.emit('currentMessages', chat)
     socket.on('message', sendMessage)
-    function sendMessage(message, id){
-        const time = currentdate.getHours() + ":" + currentdate.getMinutes()
+    function sendMessage(message, id, time_user){
         const lastMessage = chat.messages[chat.messages.length - 1]
         if(lastMessage){
             console.log(lastMessage)
             if(lastMessage.user_id == id){
-                chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:true, time:time})
+                chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:true, time:time_user})
             }else{
-                chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:false, time:time})
+                chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:false, time:time_user})
             }
         }else{
-            chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:false, time:time})
+            chat.messages.push({user_id:id, user_message:message, color:chat.color[id], row:false, time:time_user})
         }
         const user_color = chat.color[id]
         const row = chat.messages[chat.messages.length - 1].row
-        socket.broadcast.emit('sendMessage', message, id, user_color, row, time)
+        socket.broadcast.emit('sendMessage', message, id, user_color, row, time_user)
     }
 });
