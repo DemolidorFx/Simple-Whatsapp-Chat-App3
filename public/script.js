@@ -4,6 +4,7 @@
  const content = document.getElementById('content')
  const btn = document.getElementById('send')
  const currentdate = new Date();
+ var hour
  var userId
  const chat = {
      users:{}
@@ -30,7 +31,12 @@
  }
 
  btn.addEventListener('touchend', e=>{
-    const time = currentdate.getHours() + ":" + currentdate.getMinutes()
+    var hour = currentdate.getHours()
+        if(hour.toString().length == 1){
+            var time = '0'+hour + ":" + currentdate.getMinutes()
+        }else{
+            var time = hour + ":" + currentdate.getMinutes()
+        }
      if(message.value !== ''){
         const row = null
         const user_color = null
@@ -42,7 +48,12 @@
  })
 
  btn.addEventListener('click', e=>{
-    const time = currentdate.getHours() + ":" + currentdate.getMinutes()
+    var hour = currentdate.getHours()
+    if(hour.toString().length == 1){
+        var time = '0'+hour + ":" + currentdate.getMinutes()
+    }else{
+        var time = hour + ":" + currentdate.getMinutes()
+    }
      if(message.value !== ''){
         const row = null
         const user_color = null
@@ -54,7 +65,13 @@
      
  })
  function enter(){
-    const time = currentdate.getHours() + ":" + currentdate.getMinutes()
+        var hour = currentdate.getHours()
+        if(hour.toString().length == 1){
+            var time = '0'+hour + ":" + currentdate.getMinutes()
+        }else{
+            var time = hour + ":" + currentdate.getMinutes()
+        }
+    console.log(time)
      if(message.value !== ''){
         const row = null
         const user_color = null
